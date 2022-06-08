@@ -1,4 +1,16 @@
- #include "solong.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ekaraogl <ekaraogl@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/07 15:07:16 by ekaraogl          #+#    #+#             */
+/*   Updated: 2022/06/08 17:20:06 by ekaraogl         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "so_long.h"
 
 void	sprite_draw(t_main *main, void *sprite, int x, int y)
 {
@@ -32,6 +44,10 @@ int	draw_map2(t_main *main, int i)
 			sprite_draw(main, main->sprite->coin, j, i);
 			main->col++;
 		}
+		else if (main->map->map[i][j] == '\n')
+			;
+		else
+			error1("hatali harf", main);
 		j++;
 	}
 	return (j);
@@ -53,43 +69,4 @@ void	draw_map3(t_main *main)
 	}
 }
 
-/*
- void draw_map(t_main *main)
-{
-	for (int i = 0; i < main->map->y; i++)
-	{
-		for (int j = 0; j < main->map->x; j++)
-		{
-			if (main->map->map[i][j] == '1')
-			{
-				//make_box(j * PIXEL, i * PIXEL, 0x00FF00FF, main->data);
-				sprite_draw(main, main->sprite->wall, j, i);
-			}
-			else if (main->map->map[i][j] == '0')
-			{
-				sprite_draw(main, main->sprite->tile, j, i);
-			}
-            else if (main->map->map[i][j] == 'P')
-            {
-				sprite_draw(main, main->sprite->player, j, i);
-                main->player_y = i;
-                main->player_x = j;
-            }
-            else if (main->map->map[i][j] == 'E')
-			{
-				sprite_draw(main, main->sprite->exit, j, i);
-			}
-			else if (main->map->map[i][j] == 'C')
-            {
-				sprite_draw(main, main->sprite->coin, j, i);
-                main->col++;
-            }
-            printf("%c", main->map->map[i][j]);
-		}
-		//mlx_put_image_to_window(main->mlx, main->win, main->data->img, 0, 0);
-		puts("");
-	}
-} 
-
-
- */
+// draw ma2 3 burada pixel yazdırıyoruz
