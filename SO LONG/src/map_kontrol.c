@@ -6,7 +6,7 @@
 /*   By: ekaraogl <ekaraogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 15:07:29 by ekaraogl          #+#    #+#             */
-/*   Updated: 2022/06/08 17:20:52 by ekaraogl         ###   ########.fr       */
+/*   Updated: 2022/06/09 16:14:18 by ekaraogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	map_check(t_main *main)
 	char	**map;
 
 	map = main->map->map;
-	if (main->exitcount +1 <= 0)
+	if (main->exitcount <= 0)
 		error1("Exit Bulunamadı", main);
 	ft_map_cntrl_sag_sol(main);
 	ft_map_cntrl_ust_alt(main);

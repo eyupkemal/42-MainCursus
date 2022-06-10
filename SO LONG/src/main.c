@@ -6,7 +6,7 @@
 /*   By: ekaraogl <ekaraogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 15:07:26 by ekaraogl          #+#    #+#             */
-/*   Updated: 2022/06/08 17:16:31 by ekaraogl         ###   ########.fr       */
+/*   Updated: 2022/06/09 16:17:14 by ekaraogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-void	free_F(t_main *main)
+void	free_f(t_main *main)
 {
 	free(main->data);
 	free(main->sprite);
@@ -52,6 +52,6 @@ int	main(int argc, char **argv)
 	mlx_loop_hook(main->mlx, render, main);
 	mlx_hook(main->win, 17, 0, ft_key_esc, main);
 	mlx_loop(main->mlx);
-	free_F(main);
+	free_f(main);
 	return (0);
 }

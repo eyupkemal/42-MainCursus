@@ -6,7 +6,7 @@
 /*   By: ekaraogl <ekaraogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 15:06:49 by ekaraogl          #+#    #+#             */
-/*   Updated: 2022/06/08 12:41:50 by ekaraogl         ###   ########.fr       */
+/*   Updated: 2022/06/09 16:19:38 by ekaraogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	draw_first_line(t_main *main)
 	int	i;
 
 	i = 0;
-	while (i < main->map->x /2) 
+	while (i < main->map->x / 2)
 	{
 		sprite_draw(main, main->sprite->wall, i, 0);
 		i++;

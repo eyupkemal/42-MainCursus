@@ -6,7 +6,7 @@
 /*   By: ekaraogl <ekaraogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:04:55 by ekaraogl          #+#    #+#             */
-/*   Updated: 2022/06/08 17:21:28 by ekaraogl         ###   ########.fr       */
+/*   Updated: 2022/06/10 14:42:54 by ekaraogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include <stdio.h>
-#include <fcntl.h>
+# include <fcntl.h>
 # include <stdlib.h>
 # include "../minilibx/mlx.h"
 # include <unistd.h>
@@ -25,6 +25,12 @@
 # define ESC 53
 # define PIXEL 64
 # define TITLE "so_long"
+
+typedef struct s_loop
+{
+	void			*image;
+	struct s_loop	*next;
+}	t_loop;
 
 typedef struct s_data {
 	void	*img;
@@ -40,7 +46,9 @@ typedef struct s_sprite
 	void	*wall;
 	void	*tile;
 	void	*coin;
+	void	*coin2;
 	void	*exit;
+	t_loop	*misirloop;
 	int		sprite_w;
 	int		sprite_h;
 }	t_sprite;
@@ -85,9 +93,7 @@ int		key_event(int keycode, t_main *main);
 
 // RENDER.c
 int		render(t_main *main);
-void	make_box(int x, int y, int color, t_data *data);
 int		draw_first_line(t_main *main);
-
 void	render_player2(t_main *main, int i);
 
 //DRAW.c
@@ -100,8 +106,7 @@ int		draw_map2(t_main *main, int i);
 char	**map_init(char *path, t_main *main);
 void	sprite_draw(t_main *main, void *sprite, int x, int y);
 void	convert(t_main *main);
-
-void	free_F(t_main *main);
+void	free_f(t_main *main);
 
 //mapduzgunmu
 
@@ -110,7 +115,7 @@ int		ft_map_cntrl_sag_sol(t_main *game);
 
 void	error1(char *s, t_main *main);
 int		map_check(t_main *main);
-int		ft_exit_control(t_main *main);
+t_loop	*misirloop(t_main *main, void *sprite1, void *sprite2);
 
 int		ft_key_esc(t_main *game);
 #endif

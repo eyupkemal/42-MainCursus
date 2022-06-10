@@ -6,11 +6,22 @@
 /*   By: ekaraogl <ekaraogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 15:07:35 by ekaraogl          #+#    #+#             */
-/*   Updated: 2022/06/08 13:48:12 by ekaraogl         ###   ########.fr       */
+/*   Updated: 2022/06/10 14:37:12 by ekaraogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	makeanimation(t_sprite *sprite)
+{
+	static int	i;
+
+	while (i++ == 2424)
+	{
+		sprite->misirloop = sprite->misirloop->next;
+		i = 0;
+	}
+}
 
 void	render_player2(t_main *main, int i)
 {
@@ -26,7 +37,8 @@ void	render_player2(t_main *main, int i)
 		else if (main->map->map[i][j] == 'E')
 			sprite_draw(main, main->sprite->exit, j, i);
 		else if (main->map->map[i][j] == 'C')
-			sprite_draw(main, main->sprite->coin, j, i);
+			sprite_draw(main, main->sprite->misirloop->image, j, i);
+		makeanimation(main->sprite);
 		j++;
 	}
 }
@@ -34,7 +46,7 @@ void	render_player2(t_main *main, int i)
 int	render_player(t_main *main)
 {
 	int	i;
-	
+
 	i = 0;
 	while (i < main->map->y)
 	{
@@ -45,7 +57,6 @@ int	render_player(t_main *main)
 	sprite_draw(main, main->sprite->player, main->player_x, main->player_y);
 	return (0);
 }
-
 
 void	write_move_count(t_main *main)
 {
@@ -76,23 +87,4 @@ int	render(t_main *main)
 		key_event(53, main);
 	write_move_count(main);
 	return (0);
-}
-
-void	convert(t_main *main)
-{
-	int	x;
-	int	y;
-
-	x = main->sprite->sprite_w;
-	y = main->sprite->sprite_h;
-	main->sprite->player = mlx_xpm_file_to_image(main->mlx,
-			"./sprite/player.xpm", &x, &y);
-	main->sprite->tile = mlx_xpm_file_to_image(main->mlx,
-			"./sprite/plains.xpm", &x, &y);
-	main->sprite->wall = mlx_xpm_file_to_image(main->mlx,
-			"./sprite/walls.xpm", &x, &y);
-	main->sprite->coin = mlx_xpm_file_to_image(main->mlx,
-			"./sprite/goldCoin1.xpm", &x, &y);
-	main->sprite->exit = mlx_xpm_file_to_image(main->mlx,
-			"./sprite/exit.xpm", &x, &y);
 }
