@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaraogl <ekaraogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 15:07:38 by ekaraogl          #+#    #+#             */
-/*   Updated: 2022/06/12 17:07:49 by ekaraogl         ###   ########.fr       */
+/*   Updated: 2022/06/12 17:24:15 by ekaraogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include ".././inc/so_long.h"
+#include "../inc/so_long_bonus.h"
 
 void	recursive(int number, int *index, char *str)
 {

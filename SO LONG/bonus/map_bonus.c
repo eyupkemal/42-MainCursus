@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map.c                                              :+:      :+:    :+:   */
+/*   map_bonus.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaraogl <ekaraogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 15:07:32 by ekaraogl          #+#    #+#             */
-/*   Updated: 2022/06/12 17:07:35 by ekaraogl         ###   ########.fr       */
+/*   Updated: 2022/06/12 17:22:56 by ekaraogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include ".././inc/so_long.h"
+#include "../inc/so_long_bonus.h"
 
 char	**map_split2(t_main *main, int enter, int line, char *buffer)
 {

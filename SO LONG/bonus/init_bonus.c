@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   init_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaraogl <ekaraogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 15:07:23 by ekaraogl          #+#    #+#             */
-/*   Updated: 2022/06/12 17:26:24 by ekaraogl         ###   ########.fr       */
+/*   Updated: 2022/06/12 17:21:30 by ekaraogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include ".././inc/so_long.h"
+#include "../inc/so_long_bonus.h"
 
 t_loop	*misirloop(t_main *main, void *sprite1, void *sprite2)
 {
